@@ -8,15 +8,15 @@ interface FirstSectionProps {
 
 export default function FirstSection({ pageTitle, pageSubtitle, description }: FirstSectionProps) {
   return (
-    <section className="p-5 space-y-4">
+    <section className="p-5 ">
 
-      <div className="mb-8">
+      <div className="mb-6">
         <MiniCircleText text={pageTitle} />
       </div>
 
       <div className="space-y-3">
-        <h2 className="text-3xl">{pageSubtitle}</h2>
-        <p className="text-[#C0C0C0] tracking-wide text-[1.1rem]">
+        <h2 className="text-2xl">{pageSubtitle}</h2>
+        <p className="text-[#C0C0C0] tracking-wide text-[.9rem]">
           {description}
         </p>
       </div>
