@@ -4,32 +4,9 @@ import MyPicture from "@/public/images/my-picture.png";
 import HireButton from "./hire-button";
 import MainCard from "./main-card";
 import ProjectsList from "../projects-list";
-import { useState, useEffect } from "react";
-
-interface Repo {
-  id: number;
-  name: string;
-  html_url: string;
-  description: string | null;
-  language: string | null;
-  stargazers_count: number;
-
-  fork: boolean;
-}
 
 export default function HomeCard() {
-
-  const [repos, setRepos] = useState<Repo[]>([]);
-
-  useEffect(() => {
-    fetch("/api/github")
-      .then((res) => res.json())
-      .then((data) => setRepos(data.slice(0, 6)))
-      .catch((error) => console.error(error));
-  }, []);
-
   return (
-
     <MainCard
       children={
         <>
@@ -57,7 +34,7 @@ export default function HomeCard() {
 
           </section>
 
-          <ProjectsList projects={repos} />
+          <ProjectsList />
         </>
       } />
   );
