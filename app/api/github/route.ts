@@ -2,30 +2,35 @@ export async function GET() {
   const username = process.env.GITHUB_USERNAME;
   const token = process.env.GITHUB_TOKEN;
 
-  const res = await fetch(`https://api.github.com/users/${username}/repos`, {
-    headers: {
-      Authorization: `token ${token}`,
-    },
-  });
+  try {
+    const res = await fetch(`https://api.github.com/users/${username}/repos`, {
+      headers: {
+        Authorization: `token ${token}`,
+      },
+      next: { revalidate: 60 * 10 }
+    });
 
-  if (!res.ok) {
-    return new Response(JSON.stringify({ error: 'Falha ao buscar repositórios' }), { status: 500 });
+    if (!res.ok) {
+      return Response.json(
+        { error: 'Erro ao buscar repositórios' },
+        { status: res.status });
+    }
+
+    const data = await res.json();
+
+    const filtered = data
+      .filter((repo: any) => !repo.fork)
+      .sort((a: any, b: any) =>
+        new Date(b.updated_at).getTime() -
+        new Date(a.updated_at).getTime());
+
+    return Response.json(filtered);
+
+  } catch (error: any) {
+    if (error.cause?.code === "ENOTFOUND" || error.message.includes("fetch")) {
+
+      return new Response(
+        JSON.stringify({ error: 'Erro de rede ao buscar repositórios' }), { status: 503 });
+    }
   }
-
-  let data;
-
-  if (!res.ok) {
-   data = []
-  } else if (res.ok) { data = await res.json();}  
-
-  interface Repo {
-    fork: boolean;
-    updated_at: string;
-  }
-
-  const filtered = (data as Repo[])
-    .filter(repo => !repo.fork)
-    .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
-
-  return Response.json(filtered);
 }

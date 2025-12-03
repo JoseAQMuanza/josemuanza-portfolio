@@ -3,64 +3,30 @@ import MiniCircleText from "../mini-circle-text";
 import MyPicture from "@/public/images/my-picture.png";
 import HireButton from "./hire-button";
 import MainCard from "./main-card";
-import ProductsList from "../products-list";
 import ProjectsList from "../projects-list";
+import { useState, useEffect } from "react";
+
+interface Repo {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string | null;
+  language: string | null;
+  stargazers_count: number;
+
+  fork: boolean;
+}
 
 export default function HomeCard() {
 
- const projects = [
-    { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test01', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 01 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test02', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 02 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test03', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 0 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 }      
-  ]
+  const [repos, setRepos] = useState<Repo[]>([]);
 
-   const products = [
-    { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test01', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 01 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test02', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 02 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test03', 
-      name: 'Project 01', 
-      avatar: MyPicture.src,
-      description: 'Projeto 0 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 }
-  ]
+  useEffect(() => {
+    fetch("/api/github")
+      .then((res) => res.json())
+      .then((data) => setRepos(data.slice(0, 6)))
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
 
@@ -90,9 +56,8 @@ export default function HomeCard() {
             </section>
 
           </section>
-          
-          <ProjectsList  projects={projects}/>
-          <ProductsList products={products}/>
+
+          <ProjectsList projects={repos} />
         </>
       } />
   );

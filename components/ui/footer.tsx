@@ -8,25 +8,7 @@ export default function Footer() {
       <div className="p-7 rounded-lg bg-[#2C2C2C]">
         <div className="flex justify-between">
           <MiniCircleText text="Follow Me" />
-          <ul className="flex gap-2">
-            <li>
-              <Link
-                className="flex items-center justify-center text-white bg-neutral-700 rounded-full w-10 h-10 hover:bg-neutral-800"
-                href="#"
-                aria-label="Facebook"
-              >
-                <FaFacebook className="h-5 w-5 fill-current" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="flex items-center justify-center text-white bg-neutral-700 rounded-full w-10 h-10  hover:bg-neutral-800"
-                href="#"
-                aria-label="Instagram"
-              >
-                <FaInstagram className="h-5 w-5 fill-current" />
-              </Link>
-            </li>
+          <ul className="flex gap-2">            
             <li>
               <Link
                 className="flex items-center justify-center text-white bg-neutral-700 rounded-full w-10 h-10 hover:bg-neutral-800"
