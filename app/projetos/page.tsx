@@ -4,7 +4,6 @@ import FirstSection from "@/components/first-section";
 import ProjectsList from "@/components/projects-list";
 
 import MainCard from "@/components/ui/main-card";
-import myAvatar from "@/public/images/my-picture.png"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -28,37 +27,8 @@ export default function ProjectsPage() {
       .then((res) => res.json())
       .then((data) => setRepos(data.slice(0, 6)))
       .catch((error) => console.error(error));
-  }, []);  
-
-  const projects = [
-    { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test01', 
-      name: 'Project 01', 
-      avatar: myAvatar.src,
-      description: 'Projeto 01 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test02', 
-      name: 'Project 01', 
-      avatar: myAvatar.src,
-      description: 'Projeto 02 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 },
-       { 
-      id: 1, 
-      html_url: 'https://http://localhost:3000/test03', 
-      name: 'Project 01', 
-      avatar: myAvatar.src,
-      description: 'Projeto 0 para o teste de comportamento do card', 
-      language: 'Typescript', 
-      stargazers_count: 1 }      
-  ]   
-
-
-  console.log(repos);
+  }, []);                   
+  
   return (
     <MainCard
       children={
@@ -68,7 +38,7 @@ export default function ProjectsPage() {
             pageSubtitle="Meus Projetos"
             description="Uma breve descrição dos Projetos que desenvolvi." />
 
-          <ProjectsList projects={projects}/>          
+          <ProjectsList projects={repos}/>          
         </>
       }
     />

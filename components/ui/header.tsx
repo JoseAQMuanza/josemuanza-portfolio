@@ -17,10 +17,6 @@ export default function Header() {
           <Link href="/projetos" title="Projetos" className="hover:bg-[#2C2C2C] hover:rounded-full hover:text-white p-2 rounded-md">
             <AiOutlineProject size={22} className="text-[#C0C0C0] hover:text-white transition duration-500" />
           </Link>
-
-          <Link href="/produtos" title="Produtos" className="hover:bg-[#2C2C2C] hover:rounded-full hover:text-white p-2 rounded-md">
-            <AiFillProduct size={22} className="text-[#C0C0C0] hover:text-white transition duration-500" />
-          </Link>
         </div>
 
         <ul className="flex flex-1 items-center justify-end gap-3">
