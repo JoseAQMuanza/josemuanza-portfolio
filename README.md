@@ -1,4 +1,4 @@
-# Jose Muanza - Personal Website
+﻿# Jose Muanza - Personal Website
 
 ![Site Preview](https://github.com/user-attachments/assets/e569ef37-6714-4c40-b98f-8275c2774f61)
 
@@ -9,13 +9,13 @@ In addition to the projects section, the site includes information about me, my 
 
 ---
 
-## ?? Website Link
+## 🌐 Website Link
 
 Check out my personal website: https://josemuanza-portfolio.vercel.app/
 
 ---
 
-## ?? How to Run Locally
+## 🚀 How to Run Locally
 
 This project was built with [Next.js](https://nextjs.org/) using `create-next-app`.
 
@@ -38,31 +38,21 @@ You can start editing the page by modifying `app/(default)/page.tsx`. The site w
 
 ---
 
-## ?? About the Project
+## 📚 About the Project
 
 - Displays my GitHub projects in real-time.
 - Includes sections about me, my technical skills, and contact info.
 - Modern, responsive design fully integrated with my GitHub updates.
 - Contact form with server-side delivery (Resend).
 
-## ?? Environment Variables
+## 🔧 Environment Variables
 
-Create a `.env.local` file and set:
-
-```bash
-GITHUB_USERNAME=your_github_username
-GITHUB_TOKEN=your_github_token
-NEXT_PUBLIC_SITE_URL=https://your-site.com
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
-RESEND_API_KEY=your_resend_key
-CONTACT_TO_EMAIL=you@yourdomain.com
-CONTACT_FROM_EMAIL=Portfolio <no-reply@yourdomain.com>
-```
+Create a `.env.local` file and set your environment variables.
 
 The token is optional for public repos, but recommended to avoid API rate limits.
 Analytics and contact form require configuration to work in production.
 
-## ?? Tech Stack
+## 🧰 Tech Stack
 
 - Next.js (App Router)
 - React + TypeScript
@@ -70,7 +60,7 @@ Analytics and contact form require configuration to work in production.
 - GitHub API
 - Resend (contact form)
 
-## ?? License
+## 📄 License
 
 Released under the GPL-3.0 License.
 
