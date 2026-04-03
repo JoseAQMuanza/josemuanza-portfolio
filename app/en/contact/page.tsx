@@ -4,18 +4,6 @@ import { useState } from "react";
 import MainCard from "@/components/ui/main-card";
 import MiniCircleText from "@/components/mini-circle-text";
 
-export const metadata = {
-  title: "Contact",
-  description: "Get in touch with José Muanza.",
-  alternates: {
-    canonical: "/en/contact",
-    languages: {
-      "pt-PT": "/contato",
-      "en-US": "/en/contact",
-    },
-  },
-};
-
 export default function ContactEnPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
