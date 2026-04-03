@@ -28,19 +28,20 @@ async function getRepo(slug: string): Promise<GitHubRepo | null> {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const repo = await getRepo(params.slug);
+  const { slug } = await params;
+  const repo = await getRepo(slug);
   if (!repo) return { title: "Projeto não encontrado" };
 
   return {
     title: repo.name,
     description: repo.description || "Detalhes do projeto",
     alternates: {
-      canonical: `/projetos/${params.slug}`,
+      canonical: `/projetos/${slug}`,
       languages: {
-        "pt-PT": `/projetos/${params.slug}`,
-        "en-US": `/en/projects/${params.slug}`,
+        "pt-PT": `/projetos/${slug}`,
+        "en-US": `/en/projects/${slug}`,
       },
     },
   };
@@ -49,9 +50,10 @@ export async function generateMetadata({
 export default async function ProjectDetailPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const repo = await getRepo(params.slug);
+  const { slug } = await params;
+  const repo = await getRepo(slug);
 
   if (!repo) {
     notFound();
