@@ -6,22 +6,23 @@ interface FirstSectionProps {
   description: string;
 }
 
-export default function FirstSection({ pageTitle, pageSubtitle, description }: FirstSectionProps) {
+export default function FirstSection({
+  pageTitle,
+  pageSubtitle,
+  description,
+}: FirstSectionProps) {
   return (
-    <section className="p-5 ">
-
-      <div className="mb-6">
-        <MiniCircleText text={pageTitle} />
-      </div>
+    <section className="space-y-4">
+      <MiniCircleText text={pageTitle} />
 
       <div className="space-y-3">
-        <h2 className="text-2xl">{pageSubtitle}</h2>
-        <p className="text-[#C0C0C0] tracking-wide text-[.9rem]">
+        <h2 className="font-display text-2xl font-semibold text-white">
+          {pageSubtitle}
+        </h2>
+        <p className="text-base text-[var(--color-muted)] leading-relaxed">
           {description}
         </p>
       </div>
-
-      
     </section>
   );
 }

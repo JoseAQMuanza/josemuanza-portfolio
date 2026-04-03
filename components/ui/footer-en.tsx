@@ -2,12 +2,12 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import MiniCircleText from "../mini-circle-text";
 
-export default function Footer() {
+export default function FooterEn() {
   return (
     <footer className="space-y-4">
       <div className="card-surface rounded-2xl p-6">
         <div className="flex justify-between items-center">
-          <MiniCircleText text="Conecte-se" />
+          <MiniCircleText text="Connect" />
           <ul className="flex gap-2">
             <li>
               <Link
@@ -36,9 +36,9 @@ export default function Footer() {
       </div>
 
       <div className="card-surface rounded-2xl p-6 text-center text-sm text-[var(--color-muted)]">
-        &copy; 2025 José Muanza - Portfólio pessoal
+        &copy; 2025 José Muanza - Personal portfolio
         <br />
-        Feito com carinho e curiosidade // Luanda, Angola.
+        Built with curiosity // Luanda, Angola.
       </div>
     </footer>
   );

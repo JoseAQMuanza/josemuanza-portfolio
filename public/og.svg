@@ -1,0 +1,28 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0e27" />
+      <stop offset="100%" stop-color="#141b39" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5b8cff" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="150" cy="120" r="120" fill="#5b8cff" opacity="0.2" />
+  <circle cx="1050" cy="510" r="180" fill="#22d3ee" opacity="0.15" />
+  <rect x="80" y="120" width="8" height="390" fill="url(#accent)" />
+  <text x="120" y="220" font-size="56" font-family="Arial, sans-serif" fill="#f1f5f9" font-weight="700">
+    José Muanza
+  </text>
+  <text x="120" y="280" font-size="28" font-family="Arial, sans-serif" fill="#cbd5f5">
+    Full-Stack Web Developer
+  </text>
+  <text x="120" y="340" font-size="26" font-family="Arial, sans-serif" fill="#94a3b8">
+    Building fast, reliable web experiences
+  </text>
+  <text x="120" y="420" font-size="22" font-family="Arial, sans-serif" fill="#94a3b8">
+    josemuanza-portfolio.vercel.app
+  </text>
+</svg>

@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "José Muanza | Início",
-  description: "Página inicial do meu site pessoal",
+  title: "Início",
+  description: "Página inicial do portfólio de José Muanza",
 };
 
 import HomeCard from "@/components/ui/home-card";
@@ -8,7 +8,7 @@ import HomeCard from "@/components/ui/home-card";
 export default function DefaultPage() {
   return (
     <>
-      <HomeCard />      
+      <HomeCard />
     </>
   );
 }

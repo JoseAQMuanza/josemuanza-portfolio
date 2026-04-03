@@ -1,18 +1,18 @@
 ﻿import React from "react";
 
 export const metadata = {
-  title: "Projetos",
-  description: "Página de projetos do meu site pessoal",
+  title: "Contato",
+  description: "Fale comigo sobre seu projeto ou parceria.",
   alternates: {
-    canonical: "/projetos",
+    canonical: "/contato",
     languages: {
-      "pt-PT": "/projetos",
-      "en-US": "/en/projects",
+      "pt-PT": "/contato",
+      "en-US": "/en/contact",
     },
   },
 };
 
-export default function ProjetosLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode;

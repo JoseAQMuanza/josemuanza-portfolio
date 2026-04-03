@@ -1,8 +1,15 @@
-import React from 'react';
+﻿import React from "react";
 
 export const metadata = {
-  title: "José Muanza | Sobre",
+  title: "Sobre",
   description: "Página sobre mim do meu site pessoal",
+  alternates: {
+    canonical: "/sobre",
+    languages: {
+      "pt-PT": "/sobre",
+      "en-US": "/en/about",
+    },
+  },
 };
 
 export default function AboutMeLayout({
@@ -10,7 +17,5 @@ export default function AboutMeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (    
-    <main className="grow">{children}</main>        
-  );
+  return <main className="grow">{children}</main>;
 }

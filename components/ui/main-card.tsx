@@ -1,26 +1,26 @@
-import Footer from "./footer";
+﻿import Footer from "./footer";
+import FooterEn from "./footer-en";
 import LetsWork from "../lets-work";
+import LetsWorkEn from "./lets-work-en";
 
 interface HomeCardProps {
-  children: React.ReactNode
+  children: React.ReactNode;
+  variant?: "pt" | "en";
 }
 
-export default function MainCard({ children }: HomeCardProps ) {
+export default function MainCard({ children, variant = "pt" }: HomeCardProps) {
+  const isEn = variant === "en";
+
   return (
-    <>    
-    <section className="flex justify-center items-center mt-18.5">
-      <div className="bg-[#212121] xs:min-w-[10px]  min-h-screen min-w-[455px] max-w-[500px] sm:min-w-[500px] m-1.5  p-3 rounded-2xl space-y-4">
-        { 
-          children
-        }        
+    <section className="flex justify-center items-start pt-24 pb-10">
+      <div className="card-surface w-full max-w-[560px] mx-3 p-6 rounded-3xl space-y-8">
+        {children}
 
-        <LetsWork />
+        {isEn ? <LetsWorkEn /> : <LetsWork />}
 
-        <section>
-          <Footer />
-        </section>
-      </div >
+        <section>{isEn ? <FooterEn /> : <Footer />}</section>
+      </div>
     </section>
-    </>
   );
 }
+

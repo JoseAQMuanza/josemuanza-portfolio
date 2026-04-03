@@ -8,16 +8,17 @@ import ProjectsList from "../projects-list";
 import ProjectsListSkeleton from "../projects-list-skeleton";
 import CaseStudies from "../case-studies";
 
-export default function HomeCard() {
+export default function HomeCardEn() {
   return (
     <MainCard
+      variant="en"
       children={
         <>
           <section className="space-y-8">
             <section className="flex items-center justify-between px-2">
-              <MiniCircleText text="Disponível para novas parcerias" />
+              <MiniCircleText text="Available for new partnerships" />
               <span className="pill hidden sm:inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold">
-                Aberto a projetos
+                Open to projects
               </span>
             </section>
 
@@ -38,11 +39,11 @@ export default function HomeCard() {
                   José Muanza
                 </h1>
                 <p className="text-sm text-[var(--color-muted-2)]">
-                  Desenvolvedor Web Full-Stack
+                  Full-Stack Web Developer
                 </p>
                 <p className="text-base text-[var(--color-muted)]">
-                  Ajudo startups e negócios locais a criarem experiências web
-                  rápidas, confiáveis e com identidade.
+                  I help startups and local businesses build fast, reliable web
+                  experiences with a strong identity.
                 </p>
               </div>
               <HireButton />
@@ -51,31 +52,42 @@ export default function HomeCard() {
 
           <CaseStudies
             title="Case Studies"
-            subtitle="Resultados reais com foco em performance e clareza."
-            ctaLabel="Ver projeto"
-            statusLabel="Documentação em breve"
+            subtitle="Real outcomes focused on performance and clarity."
+            ctaLabel="View project"
+            statusLabel="Case Study: In Progress"
             items={[
               {
-                title: "Sistema de Gestão ISPEKA",
+                title: "ISPEKA Management System",
                 summary:
-                  "Digitalização completa dos processos acadêmicos do Instituto Superior Politécnico Kalandula de Angola.",
+                  "Full digitization of academic processes for Instituto Superior Politécnico Kalandula de Angola.",
                 outcome:
-                  "Transformou processos manuais em um fluxo digital centralizado, aumentando a eficiência administrativa.",
+                  "Replaced manual workflows with a centralized digital flow, improving administrative efficiency.",
                 stack: ["React", "Node.js", "PostgreSQL"],
               },
               {
                 title: "Task Management Dashboard",
                 summary:
-                  "Aplicação moderna de alta performance para gestão de tarefas focada em UX e produtividade.",
+                  "High-performance task management app focused on UX and productivity.",
                 outcome:
-                  "Alcançou pontuação máxima de performance e acessibilidade, oferecendo uma experiência fluida em qualquer dispositivo.",
+                  "Achieved top performance and accessibility scores with a smooth experience across devices.",
                 stack: ["React", "TypeScript", "Tailwind CSS"],
               },
             ]}
           />
 
           <Suspense fallback={<ProjectsListSkeleton />}>
-            <ProjectsList />
+            <ProjectsList
+              detailBasePath="/en/projects"
+              dateLocale="en-US"
+              labels={{
+                sectionTitle: "Featured projects",
+                emptyTitle: "No projects available",
+                emptySubtitle: "Update GitHub to show projects here.",
+                descriptionFallback: "No description available.",
+                githubLabel: "GitHub",
+                updatedLabel: "Updated on",
+              }}
+            />
           </Suspense>
         </>
       }

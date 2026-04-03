@@ -2,19 +2,20 @@
 
 ![Site Preview](https://github.com/user-attachments/assets/e569ef37-6714-4c40-b98f-8275c2774f61)
 
-This is my personal website, created to centralize and showcase who I am as a programmer.  
-The site uses the **GitHub API** to automatically fetch and display my projects, including private repositories I authorize, always sorted by the most recent updates.
+This is my personal website, created to centralize and showcase who I am as a programmer.
+The site uses the **GitHub API** to automatically fetch and display my projects, always sorted by the most recent updates.
 
 In addition to the projects section, the site includes information about me, my technical skills, contact info, and everything that is part of my journey as a developer.
 
 ---
 
-## 🌐 Website Link
-Check out my personal website: [https://josemuanza-portfolio.vercel.app/](https://josemuanza-portfolio.vercel.app/)
+## ?? Website Link
+
+Check out my personal website: https://josemuanza-portfolio.vercel.app/
 
 ---
 
-## 🚀 How to Run Locally
+## ?? How to Run Locally
 
 This project was built with [Next.js](https://nextjs.org/) using `create-next-app`.
 
@@ -30,23 +31,47 @@ yarn dev
 pnpm install
 pnpm dev
 ```
-Open http://localhost:3000
- in your browser to view the site.
 
-You can start editing the page by modifying app/page.tsx. The site will auto-update as you make changes.
+Open http://localhost:3000 in your browser to view the site.
 
-📚 About the Project
+You can start editing the page by modifying `app/(default)/page.tsx`. The site will auto-update as you make changes.
 
-Displays my GitHub projects in real-time.
+---
 
-Includes sections about me, my technical skills, and contact info.
+## ?? About the Project
 
-Modern, responsive design fully integrated with my GitHub updates.
+- Displays my GitHub projects in real-time.
+- Includes sections about me, my technical skills, and contact info.
+- Modern, responsive design fully integrated with my GitHub updates.
+- Contact form with server-side delivery (Resend).
 
-📄 License
+## ?? Environment Variables
 
-Released under the GPL-3.0 License
-.
+Create a `.env.local` file and set:
+
+```bash
+GITHUB_USERNAME=your_github_username
+GITHUB_TOKEN=your_github_token
+NEXT_PUBLIC_SITE_URL=https://your-site.com
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+RESEND_API_KEY=your_resend_key
+CONTACT_TO_EMAIL=you@yourdomain.com
+CONTACT_FROM_EMAIL=Portfolio <no-reply@yourdomain.com>
+```
+
+The token is optional for public repos, but recommended to avoid API rate limits.
+Analytics and contact form require configuration to work in production.
+
+## ?? Tech Stack
+
+- Next.js (App Router)
+- React + TypeScript
+- Tailwind CSS
+- GitHub API
+- Resend (contact form)
+
+## ?? License
+
+Released under the GPL-3.0 License.
 
 Copyright 2024 © Jose Muanza
-

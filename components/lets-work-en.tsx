@@ -1,14 +1,14 @@
 ﻿import HireButton from "./ui/hire-button";
 
-export default function LetsWork() {
+export default function LetsWorkEn() {
   return (
     <section className="card-surface rounded-2xl p-6 text-center space-y-2">
       <h2 className="font-display text-2xl font-semibold text-white">
-        Vamos construir algo juntos.
+        Let’s build something together.
       </h2>
       <p className="text-sm text-[var(--color-muted)]">
-        Estou disponível para projetos freelance, colaborações e contratos de
-        curto prazo.
+        Available for freelance projects, collaborations, and short-term
+        contracts.
       </p>
       <HireButton />
     </section>

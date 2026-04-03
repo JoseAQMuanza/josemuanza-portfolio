@@ -17,11 +17,7 @@ export default function DefaultLayout({
       duration: 700,
       easing: "ease-out-cubic",
     });
-  });
+  }, []);
 
-  return (
-    <>      
-      <main className="grow">{children}</main>      
-    </>
-  );
+  return <main className="grow">{children}</main>;
 }

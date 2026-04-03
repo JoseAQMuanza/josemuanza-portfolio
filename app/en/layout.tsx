@@ -1,18 +1,18 @@
 ﻿import React from "react";
 
 export const metadata = {
-  title: "Projetos",
-  description: "Página de projetos do meu site pessoal",
+  title: "English",
+  description: "English version of José Muanza's portfolio.",
   alternates: {
-    canonical: "/projetos",
+    canonical: "/en",
     languages: {
-      "pt-PT": "/projetos",
-      "en-US": "/en/projects",
+      "pt-PT": "/",
+      "en-US": "/en",
     },
   },
 };
 
-export default function ProjetosLayout({
+export default function EnglishLayout({
   children,
 }: {
   children: React.ReactNode;
